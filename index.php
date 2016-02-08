@@ -5,13 +5,19 @@
 		require_once dirname(__FILE__) . '/lib/curl_query.php';
 		require_once dirname(__FILE__) . '/lib/simple_html_dom.php';
 		
-		$save_folder = getcwd() . '/html/';
+		//**********************************************
+		//$save_folder = Надо прописать свой каталог для сохранения файлов product--xx.html
+		//**********************************************
+
+		$save_folder = '/var/www/html/eliseeva/html/';
+
+		//**********************************************
 		
 		$arr = array();
 		
 		$site = 'http://opt.eliseevaolesya.com/look-book/'; 
 
-		echo "Start script: " . date("H:i:s") . "<br>";
+		echo date('Y-m-d H:i:s') . " -- Start script." . PHP_EOL;
 		
 		$arr = get_pages ();
 		
@@ -22,8 +28,8 @@
 			
 		}
 		
-		echo "Download poructs: " . count($arr) . "<br>";
-		echo "Stop script: " . date("H:i:s") . "<br>";
+		echo date('Y-m-d H:i:s') . " -- Download " . count($arr) . " poructs." . PHP_EOL;
+		echo date('Y-m-d H:i:s') . " -- Stop script." . PHP_EOL;
 
 		
 //Функция определения кол-ва страниц каталога
